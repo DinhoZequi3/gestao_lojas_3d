@@ -23,17 +23,38 @@
 <section class="login-screen" id="login-screen">
   <div class="login-card">
     <div class="login-logo">◇</div>
-    <h1>Gestão de Lojas</h1>
-    <p>Entre para acessar o painel da Zequi Gamer.</p>
+    <h1 id="auth-title">Gestão de Lojas</h1>
+    <p id="auth-subtitle">Entre para acessar o painel da Zequi Gamer.</p>
+
     <form id="login-form" class="login-form">
       <label for="login-email">E-mail</label>
       <input id="login-email" type="email" autocomplete="username" required placeholder="seu@email.com">
       <label for="login-password">Senha</label>
       <input id="login-password" type="password" autocomplete="current-password" required placeholder="Sua senha">
+      <button class="auth-link" id="btn-forgot-password" type="button">Esqueci minha senha</button>
       <div class="login-error" id="login-error" role="alert"></div>
       <button class="login-submit" id="login-submit" type="submit">Entrar</button>
     </form>
-    <small>Acesso restrito.</small>
+
+    <form id="forgot-form" class="login-form" hidden>
+      <label for="forgot-email">E-mail cadastrado</label>
+      <input id="forgot-email" type="email" autocomplete="email" required placeholder="seu@email.com">
+      <div class="login-message" id="forgot-message" role="status"></div>
+      <button class="login-submit" id="forgot-submit" type="submit">Enviar link de recuperação</button>
+      <button class="auth-link auth-link-center" id="btn-back-login" type="button">Voltar para o login</button>
+    </form>
+
+    <form id="reset-form" class="login-form" hidden>
+      <label for="new-password">Nova senha</label>
+      <input id="new-password" type="password" autocomplete="new-password" minlength="8" required placeholder="Digite a nova senha">
+      <label for="confirm-password">Confirmar nova senha</label>
+      <input id="confirm-password" type="password" autocomplete="new-password" minlength="8" required placeholder="Digite novamente">
+      <div class="login-error" id="reset-error" role="alert"></div>
+      <div class="login-message" id="reset-message" role="status"></div>
+      <button class="login-submit" id="reset-submit" type="submit">Salvar nova senha</button>
+    </form>
+
+    <small id="auth-footer">Acesso restrito.</small>
   </div>
 </section>
 
