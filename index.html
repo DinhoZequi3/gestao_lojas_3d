@@ -19,7 +19,24 @@
 </head>
 <body>
 
-<div class="app">
+<section class="login-screen" id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">◇</div>
+    <h1>Gestão de Lojas</h1>
+    <p>Entre para acessar o painel da Zequi Gamer.</p>
+    <form id="login-form" class="login-form">
+      <label for="login-email">E-mail</label>
+      <input id="login-email" type="email" autocomplete="username" required placeholder="seu@email.com">
+      <label for="login-password">Senha</label>
+      <input id="login-password" type="password" autocomplete="current-password" required placeholder="Sua senha">
+      <div class="login-error" id="login-error" role="alert"></div>
+      <button class="login-submit" id="login-submit" type="submit">Entrar</button>
+    </form>
+    <small>Acesso restrito.</small>
+  </div>
+</section>
+
+<div class="app" hidden>
 
   <aside class="sidebar" id="sidebar">
     <div class="brand">
@@ -38,6 +55,7 @@
       <button id="btn-export" class="ghost-btn" title="Exportar backup"><span class="btn-icon">⭳</span><span class="btn-label">Exportar backup</span></button>
       <label class="ghost-btn" for="file-import" title="Importar backup"><span class="btn-icon">⭱</span><span class="btn-label">Importar backup</span></label>
       <input type="file" id="file-import" accept="application/json" hidden>
+      <button id="btn-logout" class="ghost-btn" title="Sair da conta"><span class="btn-icon">↪</span><span class="btn-label">Sair</span></button>
       <p class="hint">Os dados ficam salvos neste navegador. Exporte um backup de vez em quando.</p>
     </div>
   </aside>
@@ -48,6 +66,8 @@
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="app.js"></script>
+<script src="auth.js"></script>
 </body>
 </html>
