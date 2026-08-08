@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestão de Lojas — Impressão 3D</title>
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("gestaoLojas3D_theme") || "light";
+    document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark">◇</span>
+      <div class="brand-text">
+        <strong>Gestão de Lojas</strong>
+        <span>Impressão 3D &amp; Revenda</span>
+      </div>
+      <button id="btn-toggle-sidebar" class="collapse-toggle" title="Recolher menu">‹</button>
+    </div>
+
+    <nav class="nav" id="nav"></nav>
+
+    <div class="sidebar-footer">
+      <button id="btn-theme-toggle" class="ghost-btn" title="Alternar tema"><span class="btn-icon">☾</span><span class="btn-label">Modo escuro</span></button>
+      <button id="btn-export" class="ghost-btn" title="Exportar backup"><span class="btn-icon">⭳</span><span class="btn-label">Exportar backup</span></button>
+      <label class="ghost-btn" for="file-import" title="Importar backup"><span class="btn-icon">⭱</span><span class="btn-label">Importar backup</span></label>
+      <input type="file" id="file-import" accept="application/json" hidden>
+      <p class="hint">Os dados ficam salvos neste navegador. Exporte um backup de vez em quando.</p>
+    </div>
+  </aside>
+
+  <main class="content" id="content">
+    <div class="empty-state">Carregando dados…</div>
+  </main>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
