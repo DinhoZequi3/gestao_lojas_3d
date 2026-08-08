@@ -80,12 +80,31 @@
 
 .login-submit:disabled { opacity: .65; cursor: wait; }
 
-.login-error {
+.auth-link {
+  align-self: flex-end;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  padding: 4px 0;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-link:hover { text-decoration: underline; }
+.auth-link-center { align-self: center; margin-top: 5px; }
+
+.login-error,
+.login-message {
   min-height: 19px;
-  color: var(--bad);
   font-size: 12px;
   margin-top: 2px;
+  line-height: 1.45;
 }
+
+.login-error { color: var(--bad); }
+.login-message { color: var(--ink-soft); }
 
 .login-card small {
   display: block;
