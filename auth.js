@@ -42,7 +42,7 @@ function showLogin() {
   if (!recoveryMode) {
     showOnlyAuthForm(loginForm);
     authTitle.textContent = "Gestão de Lojas";
-    authSubtitle.textContent = "Entre para acessar o painel da Zequi Gamer.";
+    authSubtitle.textContent = "Entre para acessar o painel da loja Zequi Gamer.";
   }
 }
 
@@ -189,7 +189,7 @@ document.getElementById("btn-back-login").addEventListener("click", () => {
   recoveryMode = false;
   showOnlyAuthForm(loginForm);
   authTitle.textContent = "Gestão de Lojas";
-  authSubtitle.textContent = "Entre para acessar o painel da Zequi Gamer.";
+  authSubtitle.textContent = "Entre para acessar o painel da loja Zequi Gamer.";
 });
 
 forgotForm.addEventListener("submit", async (event) => {
@@ -205,7 +205,6 @@ forgotForm.addEventListener("submit", async (event) => {
   }
   forgotButton.disabled = false;
   forgotButton.textContent = "Enviar link de recuperação";
-  // Mensagem propositalmente genérica: não revela se um e-mail possui conta.
   forgotMessage.textContent = "Se esse e-mail estiver cadastrado, enviaremos as instruções de recuperação. Confira também a caixa de spam.";
 });
 
@@ -230,7 +229,7 @@ resetForm.addEventListener("submit", async (event) => {
     history.replaceState({}, document.title, window.location.pathname);
     showOnlyAuthForm(loginForm);
     authTitle.textContent = "Gestão de Lojas";
-    authSubtitle.textContent = "Entre para acessar o painel da Zequi Gamer.";
+    authSubtitle.textContent = "Entre para acessar o painel da loja Zequi Gamer.";
     showLogin();
   }, 1800);
 });
